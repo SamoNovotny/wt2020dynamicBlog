@@ -1,443 +1,458 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="author" content="Samuel Novotny" />
-    <meta name="google-signin-client_id" content="1029678842004-cgp7r7hb11lbl8qm0t5cg7576944sea5.apps.googleusercontent.com">
+    <meta
+      name="google-signin-client_id"
+      content="1029678842004-cgp7r7hb11lbl8qm0t5cg7576944sea5.apps.googleusercontent.com"
+    />
     <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet"
-          href="css/MusicerBlog.css"
-          media="screen" />
-
+    <link rel="stylesheet" href="css/MusicerBlog.css" media="screen" />
 
     <title>My Blog about Trees and Other Things</title>
-</head>
+  </head>
 
-<body>
-
-<div id="top">
-    <p id="smallMenu">
+  <body>
+    <div id="top">
+      <p id="smallMenu">
         MENU
-    </p>
+      </p>
 
-    <nav id="menu">
+      <nav id="menu">
         <ul>
-            <li><a class="menuOption" href="#welcome" onclick="showButton()">ÃVOD</a> </li>
-            <li><a class="menuOption" href="#articles/1/-1" onclick="showButton()">ÄLÃNKY</a> </li>
-            <li><a class="menuOption" href="#opinions" onclick="showButton()">NÃZORY</a> </li>
-            <li><a class="menuOption" href="#artInsert" onclick="showButton()">PRIDAÅ¤ ÄLÃNOK</a> </li>
-            <li><a href="#addOpinion" id="showForm4Phones">VÃÅ  NÃZOR</a> </li>
+          <li>
+            <a class="menuOption" href="#welcome" onclick="showButton()"
+              >ÃVOD</a
+            >
+          </li>
+          <li>
+            <a class="menuOption" href="#articles/1/-1" onclick="showButton()"
+              >ÄLÃNKY</a
+            >
+          </li>
+          <li>
+            <a class="menuOption" href="#opinions" onclick="showButton()"
+              >NÃZORY</a
+            >
+          </li>
+          <li>
+            <a class="menuOption" href="#artInsert" onclick="showButton()"
+              >PRIDAÅ¤ ÄLÃNOK</a
+            >
+          </li>
+          <li><a href="#addOpinion" id="showForm4Phones">VÃÅ  NÃZOR</a></li>
         </ul>
-    </nav>
+      </nav>
 
-    <p id="logo">
+      <p id="logo">
         MUSICER
-    </p>
-</div>
+      </p>
+    </div>
 
-<header>
-    <h1 id="empty">MUSICER</h1>
-    <h1 id="filled">MUSICER</h1>
-</header>
+    <header>
+      <h1 id="empty">MUSICER</h1>
+      <h1 id="filled">MUSICER</h1>
+    </header>
 
-<figure id="googleSignIn">
-    <div id="SignInButton"></div>
-    <div id="SignedIn">
+    <figure id="googleSignIn">
+      <div id="SignInButton"></div>
+      <div id="SignedIn">
         <span id="initial" onclick="showInfPanel()"></span>
         <div id="infPanel">
-            <p id="userName"></p>
-            <p><i id="userEmail"></i></p><br>
-            <p><button onclick="signOut()">OdhlÃ¡siÅ¥ sa</button></p>
+          <p id="userName"></p>
+          <p><i id="userEmail"></i></p>
+          <br />
+          <p><button onclick="signOut()">OdhlÃ¡siÅ¥ sa</button></p>
         </div>
-
-    </div>
-</figure>
-
-<a href="#addOpinion"  onclick="hideButton()"><p id="showForm">VÃ¡Å¡ nÃ¡zor</p></a>
-
-<main id="router-view">
-</main>
-
-
-
-<footer>
-    <p>Web design: Samuel NovotnÃ½</p>
-    <a id="kontakt" href="mailto:samuel.novotny@student.tuke.sk?Subject=Reakcia%20na%20VÃ¡Å¡%20blog%20s%20nÃ¡zvom%20Musicer"><p>@kontakt</p></a>
-</footer>
-
-<!--Templates for html, dynamically inserted by the router -->
-
-<script id="template-welcome" type="text/template">
-    <div id="introduction">
-        <p>SI SKÃR KLASIK ALEBO POPMAN?</p>
-    </div>
-
-    <div id="main">
-        <h2>NieÄo o nÃ¡s...</h2>
-        <p><b>Musicer</b> je v krÃ¡tkosti blog o hudbe pre Ä¾udÃ­, ktorÃ­ hudbu nie len poÄÃºvaju ale Åou aj doslova Å¾ijÃº.
-            KaÅ¾dÃ½ si tu mÃ´Å¾e prÃ­jsÅ¥ na svoje, modernÃ¡, klasickÃ¡ Äi filmovÃ¡ hudba tvoria zÃ¡kladÃ© tÃ©my ktorÃ½m sa tento
-            blog venuje. Okrem kvalitnej hudby tu moÅ¾no nÃ¡jsÅ¥ aj novinky z hudobnÃ©ho sveta.
-        </p>
-
-        <picture class="obr">
-            <source srcset="fig/nota.jpg" media="(max-width: 1141px)"/>
-            <source srcset="fig/hudba1.jpg" media="(max-width: 1300px)"/>
-            <source srcset="fig/hudba4.jpg" media="(max-width: 1800px)"/>
-            <img src="fig/hudba3.jpg" alt="Hudba">
-        </picture>
-    </div>
-
-    <aside>
-        <h2>Novinky zo sveta hudby</h2>
-
-        <p><b>Autumnist vydÃ¡va silnÃº kolekciu remixov Future Lights</b><br>
-            Takmer presne dva roky po vydanÃ­ vÃ½borne prijatÃ©ho a rÃ¡diohlavou ocenenÃ©ho opusu False Beacon prinÃ¡Å¡ajÃº
-            Autumnist fanÃºÅ¡ikom elektronickej hudby zbierku remixov skladieb z tejto nahrÃ¡vky. RemixovÃ½ album si
-            symbolicky prepoÅ¾iÄal nÃ¡zov od skladby Future.
-        </p>
-
-
-        <p><b>Brrrap! Jimmy PÃ© si uletel na latino rytmoch a je z toho hit</b><br>
-            Kedy to uÅ¾ koneÄne vydÃ¡Å¡? TÃºto otÃ¡zku dostÃ¡val slovenskÃ½ producent Jimmy PÃ© pravidelne odkedy zverejnil
-            ukÃ¡Å¾ku skladby Brrrap! na Instagrame. Po niekoÄ¾kÃ½ch tÃ½Å¾dÅoch sa fanÃºÅ¡ikovia doÄkali a track, ktorÃ½ je
-            v rÃ¡mci jeho tvorby veÄ¾kÃ½m experimentom.
-        </p>
-
-
-
-        <p><b>Iggy Pop a Josh Homme odvysielajÃº na internete dokument American Valhalla</b><br>
-            AmerickÃ½ spevÃ¡k Iggy Pop a muzikant Josh Homme dnes na internete odvysielajÃº ich dokument American
-            Valhalla (2017). ChcÃº sa tak uistiÅ¥, Å¾e ich priaznivci zostanÃº poÄas pandÃ©mie novÃ©ho koronavÃ­rusu doma.
-        </p>
-
-
-
-        <p><b>Peter BiÄ Project predstavili videoklip k singlu Stoj, turnÃ© presÃºvajÃº na jeseÅ</b><br>
-            Z albumu Labyrint vychÃ¡dza ÄalÅ¡Ã­, v poradÃ­ uÅ¾ siedmy singel s nÃ¡zvom Stoj. Aj toto ÄÃ­slo potvrdzuje
-            vÃ½nimoÄnosÅ¥ nahrÃ¡vky, z ktorej predchÃ¡dzajÃºcich Å¡esÅ¥ singlov dosiahlo na najvyÅ¡Å¡ie prieÄky rebrÃ­Äka
-            hranosti slovenskÃ½ch skladieb v rÃ¡diÃ¡ch.
-        </p>
-
-
-
-        <p><b>Zomrel svetoznÃ¡my poÄ¾skÃ½ skladateÄ¾ Krzysztof Penderecki</b><br>
-            Jeden z najslÃ¡vnejÅ¡Ã­ch svetovÃ½ch skladateÄ¾ov a poprednÃ½ predstaviteÄ¾ hudobnej avantgardy, Poliak
-            Krzysztof Penderecki, zomrel v nedeÄ¾u v Krakove vo veku 86 rokov "po dlhej a Å¥aÅ¾kej chorobe".
-            Informovala o tom poÄ¾skÃ¡ tlaÄovÃ¡ agentÃºra PAP
-        </p>
-
-
-    </aside>
-
-</script>
-
-<script id="template-articles" type="text/template">
-    {{#.}}
-    <article>
-        <h2><a href="{{detailLink}}">{{title}}</a></h2>
-        <p>
-            {{{content}}}
-        </p>
-        <p>
-            by {{author}}
-        </p>
-    </article>
-    {{/.}}
-</script>
-
-<script id="template-article-nav" type="text/template">
-
-    <nav class="articleNav">
-        <br><br>
-        {{#prevPage}}
-        &nbsp
-        <a href="#articles/{{prevPage}}/{{totalPages}}"><< Previous</a>
-        &nbsp
-        {{/prevPage}}
-        {{#nextPage}}
-        &nbsp
-        <a href="#articles/{{nextPage}}/{{totalPages}}">Next >></a>
-        &nbsp
-        {{/nextPage}}
-    </nav>
-
-</script>
-
-<script id="template-comment-nav" type="text/template">
-
-    <nav class="commentNav">
-        {{#prevPage}}
-        &nbsp
-        <a href="#artComment/{{prevPage}}/{{totalPages}}/{{articleId}}/{{artCurrent}}/{{artTotalPages}}"><< Previous</a>
-        &nbsp
-        {{/prevPage}}
-        {{#nextPage}}
-        &nbsp
-        <a href="#artComment/{{nextPage}}/{{totalPages}}/{{articleId}}/{{artCurrent}}/{{artTotalPages}}">Next >></a>
-        &nbsp
-        {{/nextPage}}
-    </nav>
-    <button type="button" id="addComment" onclick="showCommentForm({{articleId}}, {{artCurrent}}, {{artTotalPages}})">Add comment</button>
-
-</script>
-
-<script id="template-articles-error" type="text/template">
-
-    <article>
-        <h2>Articles acquisition failed</h2>
-        <p>
-            {{errMessage}}
-        </p>
-    </article>
-
-</script>
-
-<script id="template-opinions" type="text/template">
-    <section>
-        <a class="name" href="{{email}}">
-            <h3>{{name}}</h3>
-        </a>
-        <h3 class="date"><i>{{createdDate}}</i></h3>
-        {{#img}}
-        <img class="image" sr{{!}}c="{{img}}">
-        {{/img}}
-        {{#kwords}}
-        <p class="kwords"><b>{{keyWords}}</b></p>
-        {{/kwords}}
-        {{#music}}
-        <p class="musics">{{music}}</p>
-        {{/music}}
-        {{#introduction}}
-        <p>{{introduction}} {{change}}</p>
-        {{/introduction}}
-        <p>{{comment}}</p>
-    </section>
-</script>
-
-<script id="template-addOpinion" type="text/template">
-    <article id="fillin" class="fill">
-        <h2>VÃ¡Å¡ nÃ¡zor</h2>
-        <p><br>
-            ZÃ¡leÅ¾Ã­ nÃ¡m na vaÅ¡om nÃ¡zore. Povedzte nÃ¡m Äo VÃ¡s na naÅ¡ej strÃ¡nke zaujalo alebo
-            Äo by sme mali v budÃºcnosti zmeniÅ¥.
-            <br>
-        </p>
-        <form method="get" id="formular" onsubmit="processOpnFrmData(event)">
-
-            <input type="checkbox" id="radElm" name="repeatedRecension" value="TÃºto strÃ¡nku som uÅ¾ recenzoval." onclick="multipleClicking(this)"/>
-            <label for="radElm">TÃºto strÃ¡nku som uÅ¾ recenzoval</label>
-
-            <br><br class="subQuestion">
-
-            <label class="subQuestion" for="rad3Elm">NaÅ¡a strÃ¡nka sa od vaÅ¡ej poslednej recenzie</label><br>
-            <input class="subQuestion" type="radio" id="rad3Elm" name="change"  value="StrÃ¡nka sa od mojej poslednej recenzie zmenila k lepÅ¡iemu."/>
-            <label class="subQuestion" for="rad3Elm">zmenila k lepÅ¡iemu</label> <br class="subQuestion">
-            <input class="subQuestion" type="radio" id="rad2Elm" name="change"  value="StrÃ¡nka sa od mojej poslednej recenzie nezmenila."/>
-            <label class="subQuestion" for="rad2Elm">nezmenila</label> <br class="subQuestion">
-            <input class="subQuestion" type="radio" id="rad1Elm" name="change"  value="StrÃ¡nka sa od mojej poslednej recenzie zmenila k horÅ¡iemu."/>
-            <label class="subQuestion" for="rad1Elm">zmenila k horÅ¡iemu</label>
-
-            <br class="subQuestion"><br class="subQuestion">
-
-            <label for="chec1Elm">AkÃ© druhy hudby poÄÃºvate?</label><br>
-            <input type="checkbox" id="chec1Elm" name="classic"/>
-            <label for="chec1Elm">klasika</label><br>
-            <input type="checkbox" id="chec2Elm" name="popMusic"/>
-            <label for="chec2Elm">popmusic</label><br>
-            <input type="checkbox" id="chec3Elm" name="jazz"/>
-            <label for="chec3Elm">jazz</label>
-
-            <br><br>
-
-            <label for="nameElm">Meno *</label><br>
-            <input class="authors" type="text" name="name" id="nameElm" size="20" maxlength="50" required/>
-
-            <br><br>
-
-            <label for="emailElm">Email *</label><br>
-            <input class="emails" type="email" name="email" id="emailElm" required/>
-
-            <br><br>
-
-            <label for="urlElm">ObrÃ¡zok</label><br>
-            <input type="url" id="urlElm" name="urlImg"  placeholder="url"/>
-
-            <br><br>
-
-            <label for="keyWordsElm">KÄ¾ÃºÄovÃ© slovÃ¡</label><br>
-            <input type="text" name="keywords" id="keyWordsElm" size="20"
-                   title="max. 30 znakov (characters)" maxlength="30"
-                   spellcheck="true" lang="sk"
-                   list="keywords"
-            />
-
-            <datalist id="keywords">
-                <option value="blog">blog</option>
-                <option value="filmovÃ¡ hudba">filmovÃ¡ hudba</option>
-                <option value="svetovÃ­ interprÃ©ti">svetovÃ­ interprÃ©ti</option>
-                <option value="novinky">novinky</option>
-            </datalist>
-
-            <br><br>
-
-            <label for="commentElm">KomentÃ¡r *</label><br>
-            <textarea name="comment" id="commentElm"  cols="30" rows="3" placeholder="Tu napÃ­Å¡te vaÅ¡e postrehy" required></textarea>
-
-            <br>
-            <p>* PovinnÃ©</p>
-
-            <button type="submit">OdoslaÅ¥</button>
-            <button type="reset">Reset</button>
-
-        </form>
-    </article>
-</script>
-
-<script id="template-article" type="text/template">
-    <article>
-        <h3>{{title}}</h3>
-        <p>
-            autor: {{author}}
-        </p>
-        {{#imageLink}}
-        <figure>
-            <img src="{{imageLink}}" alt="article figure" />
-        </figure>
-        {{/imageLink}}
-        <div>{{{content}}}</div>
-        <p>
-            Keywords:
-            {{tags}}
-        </p>
-    </article>
-
-    <nav class="articleNav">
-        <a href="{{backLink}}" class="linkAsButton"><< Back</a>&nbsp &nbsp &nbsp
-        <a href="{{editLink}}" class="linkAsButton">_/ Edit</a>&nbsp &nbsp &nbsp
-        <a href="{{deleteLink}}" class="linkAsButton">x Delete</a>
-    </nav>
-
-</script>
-
-<script id="template-comments" type="text/template">
-        {{#.}}
-        <section>
-            <h3>{{author}}</h3>
-            <h3 class="date"><i>{{lastUpdated}}</i></h3>
-            <p>{{text}}</p>
-        </section>
-        {{/.}}
-</script>
-
-<script id="template-article-form" type="text/template">
-
-        <h2>{{formTitle}}</h2>
-        <br><br>
-
-        <form id="articleForm" onsubmit="return {{formSubmitCall}}">
-            <label for="author">Autor</label><br>
-            <input class="authors" type="text" name="author" id="author" value="{{author}}" size="20" title="Article author, max. length 100 characters." maxlength="100"/>
-            <br>
-            <br>
-            <label for="title">Titulok*</label><br>
-            <input type="text" name="title" id="title" value="{{title}}" size="20"  maxlength="100" pattern="\S[\S\s]*" required title="Article title, mandatory item, max. length: 100 characters, the first character must not be a space."/>
-            <br>
-            <br>
-            <label for="imageLink">ObrÃ¡zok (url)</label><br>
-            <input type="url" name="imageLink" id="imageLink" value="{{imageLink}}" size="20" title="Image URL, max. length 100 characters." maxlength="100"/>
-            <br>
-            <br>
-            <label></label><button type="button" class="btShowFileUpload" onclick="showFileUpload()">Upload image</button>
-            <br class="btShowFileUpload">
-            <br class="btShowFileUpload">
-
-            <fieldset class="fsetFileUpload">
-                <legend>Image Upload</legend>
-                <input type="file" id="flElm" name="file" accept="image/jpeg, image/png"/>
-                <br>
-                <br>
-                <button type="button" id="btFileUpload" onclick="uploadImg('{{urlBase}}')">Send image to server</button>
-                <button type="button" id="btCancelFileUpload" onclick="cancelFileUpload()">Cancel uploading</button>
-            </fieldset>
-            <br class="fsetFileUpload">
-            <br class="fsetFileUpload">
-
-
-            <label for="content">Obsah ÄlÃ¡nku*</label><br>
-            <textarea
-                    name="content" id="content" spellcheck="true" lang="sk"
-                    cols="30" rows="20" required
-                    title="Article content, mandatory item, can be plain text or in HTML.", placeholder="Tu zadajte obsah VÃ¡Å¡ho ÄlÃ¡nku (taktieÅ¾ aj v HTML)">{{content}}</textarea>
-            <br>
-            <br>
-            <label for="tags">Keywords</label><br>
-            <input  type="text" name="tags" id="tags" value="{{tags}}" size="20"
-                    title="Keyword list, comma separated."/>
-
-            <br>
-            <br>
-            <p>* PovinnÃ©</p>
-            <button type="reset">
-                Reset Form
-            </button>
-            <button type="submit">
-                {{submitBtTitle}}
-            </button>
-
-        </form>
-        {{#backLink}}
-        <br>
-        <br>
-        <br>
-    <nav class="articleNav">
-        <a href="{{backLink}}" class="linkAsButton"><< Back</a>
-    </nav>
-        {{/backLink}}
-</script>
-
-<script id="template-comment-form" type="text/template">
-
-    <article id="commentForm">
-        <h2>NOVÃ KOMENTÃR</h2>
-        <br><br>
-
-        <form id="commForm" onsubmit="processCommentForm(event,{{articleId}},{{artCurrent}},{{artTotalPages}})">
-
-            <label for="authorElm">Meno *</label><br>
-            <input class="authors" type="text" name="name" id="authorElm" size="20" maxlength="50" required/>
-
-            <br><br>
-
-            <label for="commElm">KomentÃ¡r *</label><br>
-            <textarea name="comment" id="commElm"  cols="30" rows="5" placeholder="Tu napÃ­Å¡te vaÅ¡e postrehy" required></textarea>
-
-            <br>
-            <br>
-            <p>* PovinnÃ©</p>
-            <button type="reset">
-                Reset Form
-            </button>
-            <button type="submit">
-                Add comment
-            </button>
-
-        </form>
-
-    </article>
-
-</script>
-
-<script src="js/mainMenu.js"></script>
-
-<script src="js/addOpinion.js"></script>
-
-<script src="js/handleArticleForms.js"></script>
-
-<script src="js/GoogleAccess.js"></script>
-
-<script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
-
-<script type="module" src="js/routerInit.js"></script>
-
-</body>
+      </div>
+    </figure>
+
+    <a href="#addOpinion" onclick="hideButton()"
+      ><p id="showForm">VÃ¡Å¡ nÃ¡zor</p></a
+    >
+
+    <main id="router-view"></main>
+
+    <footer>
+      <p>Web design: Samuel NovotnÃ½</p>
+      <a
+        id="kontakt"
+        href="mailto:samuel.novotny@student.tuke.sk?Subject=Reakcia%20na%20VÃ¡Å¡%20blog%20s%20nÃ¡zvom%20Musicer"
+        ><p>@kontakt</p></a
+      >
+    </footer>
+
+    <!--Templates for html, dynamically inserted by the router -->
+
+    <script id="template-welcome" type="text/template">
+      <div id="introduction">
+          <p>SI SKÃR KLASIK ALEBO POPMAN?</p>
+      </div>
+
+      <div id="main">
+          <h2>NieÄo o nÃ¡s...</h2>
+          <p><b>Musicer</b> je v krÃ¡tkosti blog o hudbe pre Ä¾udÃ­, ktorÃ­ hudbu nie len poÄÃºvaju ale Åou aj doslova Å¾ijÃº.
+              KaÅ¾dÃ½ si tu mÃ´Å¾e prÃ­jsÅ¥ na svoje, modernÃ¡, klasickÃ¡ Äi filmovÃ¡ hudba tvoria zÃ¡kladÃ© tÃ©my ktorÃ½m sa tento
+              blog venuje. Okrem kvalitnej hudby tu moÅ¾no nÃ¡jsÅ¥ aj novinky z hudobnÃ©ho sveta.
+          </p>
+
+          <picture class="obr">
+              <source srcset="fig/nota.jpg" media="(max-width: 1141px)"/>
+              <source srcset="fig/hudba1.jpg" media="(max-width: 1300px)"/>
+              <source srcset="fig/hudba4.jpg" media="(max-width: 1800px)"/>
+              <img src="fig/hudba3.jpg" alt="Hudba">
+          </picture>
+      </div>
+
+      <aside>
+          <h2>Novinky zo sveta hudby</h2>
+
+          <p><b>Autumnist vydÃ¡va silnÃº kolekciu remixov Future Lights</b><br>
+              Takmer presne dva roky po vydanÃ­ vÃ½borne prijatÃ©ho a rÃ¡diohlavou ocenenÃ©ho opusu False Beacon prinÃ¡Å¡ajÃº
+              Autumnist fanÃºÅ¡ikom elektronickej hudby zbierku remixov skladieb z tejto nahrÃ¡vky. RemixovÃ½ album si
+              symbolicky prepoÅ¾iÄal nÃ¡zov od skladby Future.
+          </p>
+
+
+          <p><b>Brrrap! Jimmy PÃ© si uletel na latino rytmoch a je z toho hit</b><br>
+              Kedy to uÅ¾ koneÄne vydÃ¡Å¡? TÃºto otÃ¡zku dostÃ¡val slovenskÃ½ producent Jimmy PÃ© pravidelne odkedy zverejnil
+              ukÃ¡Å¾ku skladby Brrrap! na Instagrame. Po niekoÄ¾kÃ½ch tÃ½Å¾dÅoch sa fanÃºÅ¡ikovia doÄkali a track, ktorÃ½ je
+              v rÃ¡mci jeho tvorby veÄ¾kÃ½m experimentom.
+          </p>
+
+
+
+          <p><b>Iggy Pop a Josh Homme odvysielajÃº na internete dokument American Valhalla</b><br>
+              AmerickÃ½ spevÃ¡k Iggy Pop a muzikant Josh Homme dnes na internete odvysielajÃº ich dokument American
+              Valhalla (2017). ChcÃº sa tak uistiÅ¥, Å¾e ich priaznivci zostanÃº poÄas pandÃ©mie novÃ©ho koronavÃ­rusu doma.
+          </p>
+
+
+
+          <p><b>Peter BiÄ Project predstavili videoklip k singlu Stoj, turnÃ© presÃºvajÃº na jeseÅ</b><br>
+              Z albumu Labyrint vychÃ¡dza ÄalÅ¡Ã­, v poradÃ­ uÅ¾ siedmy singel s nÃ¡zvom Stoj. Aj toto ÄÃ­slo potvrdzuje
+              vÃ½nimoÄnosÅ¥ nahrÃ¡vky, z ktorej predchÃ¡dzajÃºcich Å¡esÅ¥ singlov dosiahlo na najvyÅ¡Å¡ie prieÄky rebrÃ­Äka
+              hranosti slovenskÃ½ch skladieb v rÃ¡diÃ¡ch.
+          </p>
+
+
+
+          <p><b>Zomrel svetoznÃ¡my poÄ¾skÃ½ skladateÄ¾ Krzysztof Penderecki</b><br>
+              Jeden z najslÃ¡vnejÅ¡Ã­ch svetovÃ½ch skladateÄ¾ov a poprednÃ½ predstaviteÄ¾ hudobnej avantgardy, Poliak
+              Krzysztof Penderecki, zomrel v nedeÄ¾u v Krakove vo veku 86 rokov "po dlhej a Å¥aÅ¾kej chorobe".
+              Informovala o tom poÄ¾skÃ¡ tlaÄovÃ¡ agentÃºra PAP
+          </p>
+
+
+      </aside>
+    </script>
+
+    <script id="template-articles" type="text/template">
+      {{#.}}
+      <article>
+          <h2><a href="{{detailLink}}">{{title}}</a></h2>
+          <p>
+              {{{content}}}
+          </p>
+          <p>
+              by {{author}}
+          </p>
+      </article>
+      {{/.}}
+    </script>
+
+    <script id="template-article-nav" type="text/template">
+
+      <nav class="articleNav">
+          <br><br>
+          {{#prevPage}}
+          &nbsp
+          <a href="#articles/{{prevPage}}/{{totalPages}}"><< Previous</a>
+          &nbsp
+          {{/prevPage}}
+          {{#nextPage}}
+          &nbsp
+          <a href="#articles/{{nextPage}}/{{totalPages}}">Next >></a>
+          &nbsp
+          {{/nextPage}}
+      </nav>
+    </script>
+
+    <script id="template-comment-nav" type="text/template">
+
+      <nav class="commentNav">
+          {{#prevPage}}
+          &nbsp
+          <a href="#artComment/{{prevPage}}/{{totalPages}}/{{articleId}}/{{artCurrent}}/{{artTotalPages}}"><< Previous</a>
+          &nbsp
+          {{/prevPage}}
+          {{#nextPage}}
+          &nbsp
+          <a href="#artComment/{{nextPage}}/{{totalPages}}/{{articleId}}/{{artCurrent}}/{{artTotalPages}}">Next >></a>
+          &nbsp
+          {{/nextPage}}
+      </nav>
+      <button type="button" id="addComment" onclick="showCommentForm({{articleId}}, {{artCurrent}}, {{artTotalPages}})">Add comment</button>
+    </script>
+
+    <script id="template-articles-error" type="text/template">
+
+      <article>
+          <h2>Articles acquisition failed</h2>
+          <p>
+              {{errMessage}}
+          </p>
+      </article>
+    </script>
+
+    <script id="template-opinions" type="text/template">
+      <section>
+          <a class="name" href="{{email}}">
+              <h3>{{name}}</h3>
+          </a>
+          <h3 class="date"><i>{{createdDate}}</i></h3>
+          {{#img}}
+          <img class="image" sr{{!}}c="{{img}}">
+          {{/img}}
+          {{#kwords}}
+          <p class="kwords"><b>{{keyWords}}</b></p>
+          {{/kwords}}
+          {{#music}}
+          <p class="musics">{{music}}</p>
+          {{/music}}
+          {{#introduction}}
+          <p>{{introduction}} {{change}}</p>
+          {{/introduction}}
+          <p>{{comment}}</p>
+      </section>
+    </script>
+
+    <script id="template-addOpinion" type="text/template">
+      <article id="fillin" class="fill">
+          <h2>VÃ¡Å¡ nÃ¡zor</h2>
+          <p><br>
+              ZÃ¡leÅ¾Ã­ nÃ¡m na vaÅ¡om nÃ¡zore. Povedzte nÃ¡m Äo VÃ¡s na naÅ¡ej strÃ¡nke zaujalo alebo
+              Äo by sme mali v budÃºcnosti zmeniÅ¥.
+              <br>
+          </p>
+          <form method="get" id="formular" onsubmit="processOpnFrmData(event)">
+
+              <input type="checkbox" id="radElm" name="repeatedRecension" value="TÃºto strÃ¡nku som uÅ¾ recenzoval." onclick="multipleClicking(this)"/>
+              <label for="radElm">TÃºto strÃ¡nku som uÅ¾ recenzoval</label>
+
+              <br><br class="subQuestion">
+
+              <label class="subQuestion" for="rad3Elm">NaÅ¡a strÃ¡nka sa od vaÅ¡ej poslednej recenzie</label><br>
+              <input class="subQuestion" type="radio" id="rad3Elm" name="change"  value="StrÃ¡nka sa od mojej poslednej recenzie zmenila k lepÅ¡iemu."/>
+              <label class="subQuestion" for="rad3Elm">zmenila k lepÅ¡iemu</label> <br class="subQuestion">
+              <input class="subQuestion" type="radio" id="rad2Elm" name="change"  value="StrÃ¡nka sa od mojej poslednej recenzie nezmenila."/>
+              <label class="subQuestion" for="rad2Elm">nezmenila</label> <br class="subQuestion">
+              <input class="subQuestion" type="radio" id="rad1Elm" name="change"  value="StrÃ¡nka sa od mojej poslednej recenzie zmenila k horÅ¡iemu."/>
+              <label class="subQuestion" for="rad1Elm">zmenila k horÅ¡iemu</label>
+
+              <br class="subQuestion"><br class="subQuestion">
+
+              <label for="chec1Elm">AkÃ© druhy hudby poÄÃºvate?</label><br>
+              <input type="checkbox" id="chec1Elm" name="classic"/>
+              <label for="chec1Elm">klasika</label><br>
+              <input type="checkbox" id="chec2Elm" name="popMusic"/>
+              <label for="chec2Elm">popmusic</label><br>
+              <input type="checkbox" id="chec3Elm" name="jazz"/>
+              <label for="chec3Elm">jazz</label>
+
+              <br><br>
+
+              <label for="nameElm">Meno *</label><br>
+              <input class="authors" type="text" name="name" id="nameElm" size="20" maxlength="50" required/>
+
+              <br><br>
+
+              <label for="emailElm">Email *</label><br>
+              <input class="emails" type="email" name="email" id="emailElm" required/>
+
+              <br><br>
+
+              <label for="urlElm">ObrÃ¡zok</label><br>
+              <input type="url" id="urlElm" name="urlImg"  placeholder="url"/>
+
+              <br><br>
+
+              <label for="keyWordsElm">KÄ¾ÃºÄovÃ© slovÃ¡</label><br>
+              <input type="text" name="keywords" id="keyWordsElm" size="20"
+                     title="max. 30 znakov (characters)" maxlength="30"
+                     spellcheck="true" lang="sk"
+                     list="keywords"
+              />
+
+              <datalist id="keywords">
+                  <option value="blog">blog</option>
+                  <option value="filmovÃ¡ hudba">filmovÃ¡ hudba</option>
+                  <option value="svetovÃ­ interprÃ©ti">svetovÃ­ interprÃ©ti</option>
+                  <option value="novinky">novinky</option>
+              </datalist>
+
+              <br><br>
+
+              <label for="commentElm">KomentÃ¡r *</label><br>
+              <textarea name="comment" id="commentElm"  cols="30" rows="3" placeholder="Tu napÃ­Å¡te vaÅ¡e postrehy" required></textarea>
+
+              <br>
+              <p>* PovinnÃ©</p>
+
+              <button type="submit">OdoslaÅ¥</button>
+              <button type="reset">Reset</button>
+
+          </form>
+      </article>
+    </script>
+
+    <script id="template-article" type="text/template">
+      <article>
+          <h3>{{title}}</h3>
+          <p>
+              autor: {{author}}
+          </p>
+          {{#imageLink}}
+          <figure>
+              <img src="{{imageLink}}" alt="article figure" />
+          </figure>
+          {{/imageLink}}
+          <div>{{{content}}}</div>
+          <p>
+              Keywords:
+              {{tags}}
+          </p>
+      </article>
+
+      <nav class="articleNav">
+          <a href="{{backLink}}" class="linkAsButton"><< Back</a>&nbsp &nbsp &nbsp
+          <a href="{{editLink}}" class="linkAsButton">_/ Edit</a>&nbsp &nbsp &nbsp
+          <a href="{{deleteLink}}" class="linkAsButton">x Delete</a>
+      </nav>
+    </script>
+
+    <script id="template-comments" type="text/template">
+      {{#.}}
+      <section>
+          <h3>{{author}}</h3>
+          <h3 class="date"><i>{{lastUpdated}}</i></h3>
+          <p>{{text}}</p>
+      </section>
+      {{/.}}
+    </script>
+
+    <script id="template-article-form" type="text/template">
+
+          <h2>{{formTitle}}</h2>
+          <br><br>
+
+          <form id="articleForm" onsubmit="return {{formSubmitCall}}">
+              <label for="author">Autor</label><br>
+              <input class="authors" type="text" name="author" id="author" value="{{author}}" size="20" title="Article author, max. length 100 characters." maxlength="100"/>
+              <br>
+              <br>
+              <label for="title">Titulok*</label><br>
+              <input type="text" name="title" id="title" value="{{title}}" size="20"  maxlength="100" pattern="\S[\S\s]*" required title="Article title, mandatory item, max. length: 100 characters, the first character must not be a space."/>
+              <br>
+              <br>
+              <label for="imageLink">Obrázok (url)</label><br>
+              <input type="url" name="imageLink" id="imageLink" value="{{imageLink}}" size="20" title="Image URL, max. length 100 characters." maxlength="100"/>
+              <br>
+              <br>
+              <label></label><button type="button" class="btShowFileUpload" onclick="showFileUpload()">Upload image</button>
+              <br class="btShowFileUpload">
+              <br class="btShowFileUpload">
+
+              <fieldset class="fsetFileUpload">
+                  <legend>Image Upload</legend>
+                  <input type="file" id="flElm" name="file" accept="image/jpeg, image/png"/>
+                  <br>
+                  <br>
+                  <button type="button" id="btFileUpload" onclick="uploadImg('{{urlBase}}')">Send image to server</button>
+                  <button type="button" id="btCancelFileUpload" onclick="cancelFileUpload()">Cancel uploading</button>
+              </fieldset>
+              <br class="fsetFileUpload">
+              <br class="fsetFileUpload">
+
+
+              <label for="content">Obsah ÄlÃ¡nku*</label><br>
+              <textarea
+                      name="content" id="content" spellcheck="true" lang="sk"
+                      cols="30" rows="20" required
+                      title="Article content, mandatory item, can be plain text or in HTML.", placeholder="Tu zadajte obsah VÃ¡Å¡ho ÄlÃ¡nku (taktieÅ¾ aj v HTML)">{{content}}</textarea>
+              <br>
+              <br>
+              <label for="tags">Keywords</label><br>
+              <input  type="text" name="tags" id="tags" value="{{tags}}" size="20"
+                      title="Keyword list, comma separated."/>
+
+              <br>
+              <br>
+              <p>* PovinnÃ©</p>
+              <button type="reset">
+                  Reset Form
+              </button>
+              <button type="submit">
+                  {{submitBtTitle}}
+              </button>
+
+          </form>
+          {{#backLink}}
+          <br>
+          <br>
+          <br>
+      <nav class="articleNav">
+          <a href="{{backLink}}" class="linkAsButton"><< Back</a>
+      </nav>
+          {{/backLink}}
+    </script>
+
+    <script id="template-comment-form" type="text/template">
+
+      <article id="commentForm">
+          <h2>NOVÃ KOMENTÃR</h2>
+          <br><br>
+
+          <form id="commForm" onsubmit="processCommentForm(event,{{articleId}},{{artCurrent}},{{artTotalPages}})">
+
+              <label for="authorElm">Meno *</label><br>
+              <input class="authors" type="text" name="name" id="authorElm" size="20" maxlength="50" required/>
+
+              <br><br>
+
+              <label for="commElm">KomentÃ¡r *</label><br>
+              <textarea name="comment" id="commElm"  cols="30" rows="5" placeholder="Tu napÃ­Å¡te vaÅ¡e postrehy" required></textarea>
+
+              <br>
+              <br>
+              <p>* PovinnÃ©</p>
+              <button type="reset">
+                  Reset Form
+              </button>
+              <button type="submit">
+                  Add comment
+              </button>
+
+          </form>
+
+      </article>
+    </script>
+
+    <script src="js/mainMenu.js"></script>
+
+    <script src="js/addOpinion.js"></script>
+
+    <script src="js/handleArticleForms.js"></script>
+
+    <script src="js/GoogleAccess.js"></script>
+
+    <script
+      src="https://apis.google.com/js/platform.js?onload=startGSingIn"
+      async
+      defer
+    ></script>
+
+    <script type="module" src="js/routerInit.js"></script>
+  </body>
 </html>
